@@ -31,17 +31,17 @@ jobs:
 
       - name: Adding new file
         run: |
-            git config --global user.email "regevosher@gmail.com"
-            git config --global user.name "RegevO"
+            git config --global user.email "torvalds@linux-foundation.org"
+            git config --global user.name "torvalds"
 
             echo '======== STATUS 1 ========'
             git status
-            git switch -c "new_file"
-            echo 'Hello world >:)' > hello-world.txt
+            git switch -c "i_hate_linux"
+            echo 'linux sucks :(((((' > my-feelings-about-linux.txt
 
             echo '======== STATUS 2 ========'
             git status
-            git add hello-world.txt
+            git add my-feelings-about-linux.txt
 
             echo '======== STATUS 3 ========'
             git status
@@ -49,7 +49,7 @@ jobs:
 
             echo '======== STATUS 4 ========'
             git status
-            git push origin new_file
+            git push origin i_hate_linux
 
             echo '======== STATUS 5 ========'
             git status
