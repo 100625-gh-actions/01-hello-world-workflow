@@ -1,5 +1,7 @@
 name: Hello CI
-on: push
+on: 
+  push
+  
 
 permissions: write-all
   
@@ -25,17 +27,17 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
+
       - name: Run custom script
         run: bash script.sh
 
       - name: Adding new file
         run: |
-            git config --global user.email "torvalds@linux-foundation.org"
+            git config --global user.email "gangam_style@linux-foundation.org"
             git config --global user.name "torvalds"
 
             echo '======== STATUS 1 ========'
             git status
-            git switch -c "i_hate_linux"
             echo 'linux sucks :(((((' > my-feelings-about-linux.txt
 
             echo '======== STATUS 2 ========'
@@ -48,10 +50,16 @@ jobs:
 
             echo '======== STATUS 4 ========'
             git status
-            git push origin i_hate_linux
+            git push origin main
 
             echo '======== STATUS 5 ========'
             git status
 
+  hello-world:
+    runs-on: ubuntu-latest
 
+    steps:
+      - name: hello-world
+        run: |
+          echo "hello world"
 
