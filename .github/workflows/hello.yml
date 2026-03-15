@@ -25,7 +25,6 @@ jobs:
 
       - name: Checkout code
         uses: actions/checkout@v4
-
       - name: Run custom script
         run: bash script.sh
 
@@ -53,3 +52,6 @@ jobs:
 
             echo '======== STATUS 5 ========'
             git status
+
+
+
