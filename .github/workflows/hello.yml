@@ -29,6 +29,9 @@ jobs:
 
       - name: Adding new file
         run: |
+            git config --global user.email "regevosher@gmail.com"
+            git config --global user.name "RegevO"
+
             echo '======== STATUS 1 ========'
             git status
             git switch -c "new_file"
