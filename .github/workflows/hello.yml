@@ -33,28 +33,8 @@ jobs:
 
       - name: Adding new file
         run: |
-            git config --global user.email "gangam_style@linux-foundation.org"
-            git config --global user.name "torvalds"
-
-            echo '======== STATUS 1 ========'
-            git status
-            echo 'linux sucks :(((((' > my-feelings-about-linux.txt
-
-            echo '======== STATUS 2 ========'
-            git status
-            git add my-feelings-about-linux.txt
-
-            echo '======== STATUS 3 ========'
-            git status
-            git commit -am "Added a new file"
-
-            echo '======== STATUS 4 ========'
-            git status
-            git push origin main
-
-            echo '======== STATUS 5 ========'
-            git status
-
+            echo "sorry linus :("
+            
   hello-world:
     runs-on: ubuntu-latest
     needs: greet
