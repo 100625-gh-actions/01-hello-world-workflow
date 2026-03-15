@@ -26,3 +26,25 @@ jobs:
 
       - name: Run custom script
         run: bash script.sh
+
+      - name: Adding new file
+        run: |
+            echo '======== STATUS 1 ========'
+            git status
+            git switch -c "new_file"
+            echo 'Hello world >:)' > hello-world.txt
+
+            echo '======== STATUS 2 ========'
+            git status
+            git add hello-world.txt
+
+            echo '======== STATUS 3 ========'
+            git status
+            git commit -am "Added a new file"
+
+            echo '======== STATUS 4 ========'
+            git status
+            git push origin new_file
+
+            echo '======== STATUS 5 ========'
+            git status
