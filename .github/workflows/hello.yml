@@ -1,6 +1,8 @@
 name: Hello CI
 on: push
 
+permissions: write-all
+  
 jobs:
   greet:
     runs-on: ubuntu-latest
