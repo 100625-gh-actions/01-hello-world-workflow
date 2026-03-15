@@ -62,4 +62,5 @@ jobs:
       - name: hello-world
         run: |
           echo "hello world"
+          python --version
 
