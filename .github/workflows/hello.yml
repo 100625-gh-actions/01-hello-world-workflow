@@ -1,0 +1,51 @@
+# ============================================================
+# Workflow: Hello CI
+# ============================================================
+# This is the simplest possible GitHub Actions workflow.
+# It triggers on every push to the repository and runs
+# a single job with a few basic steps.
+#
+# Key concepts demonstrated:
+#   - name:       Display name shown in the Actions tab
+#   - on:         Event trigger (push = every time code is pushed)
+#   - jobs:       Contains all the jobs in this workflow
+#   - runs-on:    Which type of runner (virtual machine) to use
+#   - steps:      Sequential tasks within a job
+#   - run:        Execute a shell command
+# ============================================================
+
+name: Hello CI
+
+# --- Trigger ---
+# This workflow runs every time someone pushes code to any branch.
+on: push
+
+jobs:
+  # --- Job: greet ---
+  # A single job named "greet" that runs on an Ubuntu Linux runner.
+  greet:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Print a greeting message
+      - name: Say hello
+        run: echo "Hello from GitHub Actions!"
+
+      # Step 2: Show the current date and time on the runner
+      - name: Show date
+        run: date
+
+      # Step 3: Display some info about the runner environment
+      - name: Show runner info
+        run: |
+          echo "Runner OS: $RUNNER_OS"
+          echo "Repository: $GITHUB_REPOSITORY"
+          echo "Branch: $GITHUB_REF"
+          echo "Triggered by: $GITHUB_ACTOR"
+
+      # Step 4: Run our custom script
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Run custom script
+        run: bash script.sh
